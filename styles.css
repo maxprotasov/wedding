@@ -361,12 +361,6 @@ h2 {
   padding-left: 0;
 }
 
-.framed-box--dress {
-  min-height: clamp(230px, 48vw, 330px);
-  margin-right: auto;
-  margin-left: auto;
-}
-
 .palette {
   display: flex;
   flex-wrap: wrap;
