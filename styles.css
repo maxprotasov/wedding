@@ -670,7 +670,7 @@ h2 {
 
 @media (max-width: 540px) {
   .couple_block {
-    height: 100%;
+    height: auto;
     width: 100%;
     bottom: -66px;
   }
@@ -685,7 +685,7 @@ h2 {
 }
 @media (min-width: 541px) and (max-width: 768px) {
   .couple_block {
-    height: 100%;
+    height: auto;
     width: 100%;
     bottom: -80px;
   }
