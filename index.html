@@ -248,64 +248,80 @@
       </div>
     </main>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const fullscreenImageUrls = [
-          "./assets/IMG_0416.jpg",
-          "./assets/IMG_0563.jpg",
-          "./assets/IMG_5964.jpg",
-          "./assets/IMG_7878.jpg",
-          "./assets/IMG_8158.jpg",
-          "./assets/IMG_8276.jpg",
-          "./assets/IMG_9503.jpg",
-          "./assets/IMG_9518.jpg",
-        ];
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fullscreenImageUrls = [
+      "./assets/IMG_0416.jpg",
+      "./assets/IMG_0563.jpg",
+      "./assets/IMG_5964.jpg",
+      "./assets/IMG_7878.jpg",
+      "./assets/IMG_8158.jpg",
+      "./assets/IMG_8276.jpg",
+      "./assets/IMG_9503.jpg",
+      "./assets/IMG_9518.jpg",
+    ];
 
-        const fullscreenImageTrigger = document.querySelector(
-          ".fullscreen-image-trigger",
-        );
-        const fullscreenImageOverlay = document.querySelector(
-          ".fullscreen-image-overlay",
-        );
-        const fullscreenImageOverlayImage = document.querySelector(
-          ".fullscreen-image-overlay__image",
-        );
-        console.log("fullscreenImageTrigger:", fullscreenImageTrigger);
-        console.log("fullscreenImageTrigger:", fullscreenImageTrigger);
-        if (
-          !fullscreenImageTrigger ||
-          !fullscreenImageOverlay ||
-          !fullscreenImageOverlayImage
-        )
-          return;
+    const fullscreenImageTrigger = document.querySelector(
+      ".fullscreen-image-trigger",
+    );
 
-        let currentFullscreenImageIndex = 0;
-        let hideFullscreenImageTimeout;
+    const fullscreenImageOverlay = document.querySelector(
+      ".fullscreen-image-overlay",
+    );
 
-        fullscreenImageTrigger.addEventListener("click", () => {
-          clearTimeout(hideFullscreenImageTimeout);
+    const fullscreenImageOverlayImage = document.querySelector(
+      ".fullscreen-image-overlay__image",
+    );
 
+    if (
+      !fullscreenImageTrigger ||
+      !fullscreenImageOverlay ||
+      !fullscreenImageOverlayImage
+    ) {
+      return;
+    }
+
+    const preloadedFullscreenImages = new Map();
+
+    fullscreenImageUrls.forEach((fullscreenImageUrl) => {
+      const fullscreenImage = new Image();
+
+      fullscreenImage.src = fullscreenImageUrl;
+
+      preloadedFullscreenImages.set(fullscreenImageUrl, fullscreenImage);
+    });
+
+    let currentFullscreenImageIndex = 0;
+    let hideFullscreenImageTimeout;
+    let removeFullscreenImageTimeout;
+
+    fullscreenImageTrigger.addEventListener("click", () => {
+      clearTimeout(hideFullscreenImageTimeout);
+      clearTimeout(removeFullscreenImageTimeout);
+
+      const currentFullscreenImageUrl =
+        fullscreenImageUrls[currentFullscreenImageIndex];
+
+      fullscreenImageOverlay.classList.remove("is-hiding");
+
+      fullscreenImageOverlayImage.src = currentFullscreenImageUrl;
+
+      fullscreenImageOverlay.classList.add("is-visible");
+
+      currentFullscreenImageIndex =
+        (currentFullscreenImageIndex + 1) % fullscreenImageUrls.length;
+
+      hideFullscreenImageTimeout = setTimeout(() => {
+        fullscreenImageOverlay.classList.add("is-hiding");
+
+        removeFullscreenImageTimeout = setTimeout(() => {
+          fullscreenImageOverlay.classList.remove("is-visible");
           fullscreenImageOverlay.classList.remove("is-hiding");
-
-          fullscreenImageOverlayImage.src =
-            fullscreenImageUrls[currentFullscreenImageIndex];
-
-          fullscreenImageOverlay.classList.add("is-visible");
-
-          currentFullscreenImageIndex =
-            (currentFullscreenImageIndex + 1) % fullscreenImageUrls.length;
-
-          hideFullscreenImageTimeout = setTimeout(() => {
-            fullscreenImageOverlay.classList.add("is-hiding");
-
-            setTimeout(() => {
-              fullscreenImageOverlay.classList.remove("is-visible");
-              fullscreenImageOverlay.classList.remove("is-hiding");
-              fullscreenImageOverlayImage.src = "";
-            }, 100000);
-          }, 120000);
-        });
-      });
-    </script>
+          fullscreenImageOverlayImage.src = "";
+        }, 2000);
+      }, 3000);
+    });
+  });
+</script>
   </body>
 </html>
