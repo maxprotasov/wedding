@@ -5,7 +5,7 @@
   --ink: #3f3936;
   --white: #ffffff;
   --line: rgba(63, 57, 54, 0.9);
-  --max-width: 800px;
+  --max-width: 850px;
   --font-title: Georgia, "Times New Roman", serif;
   --font-text: Arial, Helvetica, sans-serif;
 }
@@ -103,7 +103,7 @@ figure {
 
 .section {
   position: relative;
-  padding: 36px 72px;
+  padding: 36px 0;
   text-align: center;
 }
 
@@ -161,7 +161,7 @@ h2 {
 }
 
 .hero__couple {
-  margin: -31px auto;
+  margin: -20px auto;
 }
 
 .headline-band {
@@ -259,6 +259,7 @@ h2 {
 }
 
 .framed-box {
+  margin: 0 auto;
   position: relative;
   width: min(100%, 570px);
   min-height: clamp(170px, 36vw, 250px);
@@ -667,10 +668,35 @@ h2 {
   }
 }
 
-@media (max-width: 648px) {
+@media (max-width: 540px) {
   .couple_block {
+    height: 100%;
+
     width: 100%;
-    bottom: -20px;
+    bottom: -66px;
+  }
+
+  .couple_photo {
+    min-height: 260px;
+  }
+
+  .hero__couple {
+    margin: -100px auto;
+  }
+}
+@media (min-width: 541px) and (max-width: 768px) {
+  .couple_block {
+    height: 100%;
+    width: 100%;
+    bottom: -80px;
+  }
+
+  .couple_photo {
+    min-height: 260px;
+  }
+
+  .hero__couple {
+    margin: -130px auto;
   }
 
   .section {
