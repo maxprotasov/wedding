@@ -773,8 +773,13 @@ h2 {
   object-fit: contain;
 }
 
+.description {
+  padding: 20px 65px;
+  font-size: clamp(0.98rem, 3vw, 1.2rem);
+}
+
 .form_link {
-  font-size: 19px;
+  font-size: clamp(1.15rem, 4.1vw, 1.75rem);
 }
 
 .ded {
@@ -783,10 +788,14 @@ h2 {
   padding: 0;
 }
 
+.footer--text {
+  font-size: 19px;
+}
+
 .ded--text {
   left: 0;
   width: 100%;
-  font-size: 24px;
+  font-size: clamp(1.15rem, 4.1vw, 1.75rem);
 }
 
 .hero {

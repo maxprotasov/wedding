@@ -113,7 +113,20 @@
                 loading="lazy"
               />
               <figcaption>
-                <time datetime="00:00">00:00</time> - Завершение
+                <time datetime="22:00">22:00</time> - Свадебный торт
+              </figcaption>
+            </figure>
+          </li>
+
+          <li class="timeline__item timeline__item--right">
+            <figure>
+              <img
+                src="./assets/party.jpg"
+                alt="after party"
+                loading="lazy"
+              />
+              <figcaption>
+                <time datetime="23:00">23:00</time> - After Party 
               </figcaption>
             </figure>
           </li>
@@ -132,20 +145,12 @@
             aria-hidden="true"
           />
           <div>
-            <div class="palette" aria-label="Цвета дресс-кода">
-              <span class="swatch swatch--rose"></span>
-              <span class="swatch swatch--peach"></span>
-              <span class="swatch swatch--cream"></span>
-              <span class="swatch swatch--sage"></span>
-              <span class="swatch swatch--sky"></span>
-              <span class="swatch swatch--lilac"></span>
-            </div>
             <p>
+              Будем рады если вы будете в пастельных и спокойных оттенках. <br />
+              По возможности избегайте полностью белых, ярко-красных и полностью чёрных образов.<br />
               Будем очень благодарны, если<br />
               вы поддержите стиль и цвет нашей свадьбы в<br />
               своих нарядах.
-              Будем рады если вы будете в пастельных и спокойных оттенках.
-              По возможности избегайте полностью белых, ярко-красных и полностью чёрных образов.
             </p>
           </div>
         </div>
@@ -206,6 +211,11 @@
             <strong>Усадьба «Марьянино»</strong>
           </address>
         </div>
+        <p class="description">
+          Поскольку свадьба будет проходить в 20 км от города,
+          мы планируем организовать трансфер туда и обратно из двух точек Минска.
+          Вы также можете доехать на такси самостоятельно, если вам так будет удобнее.
+        </p>
         <div style="position: relative; overflow: hidden">
           <iframe
             src="https://yandex.by/map-widget/v1/org/usadba_maryanino/74793706989/?ll=27.726079%2C54.054349&z=11"
@@ -223,11 +233,11 @@
         aria-labelledby="guest-form-title"
       >
         <h2 id="guest-form-title">Ссылка на Анкету</h2>
-        <p>Пожалуйста, дайте ответ до 15 августа</p>
+        <p>Пожалуйста, дайте ответ до <b>15 августа</b></p>
         <a class="form_link"
           href="https://docs.google.com/forms/d/e/1FAIpQLScd2MeDNjff27TgVIJAcj0aSM04M3faoeE71tSOELUD4eeEyQ/viewform?usp=dialog"
           target="_blank"
-          >Клик</a
+          ><b>Пройти Анкету</b></a
         >
       </section>
 
@@ -235,14 +245,27 @@
         class="section section--rose section--ded"
         aria-labelledby="guest-form-title"
       >
-      <div class="ded">
-        <span class="ded--text">
-          Это так же и мой праздник!!</br> Нажми на нос несколько раз,
-          что б не потерять меня
-        </span>
-        <img class="fullscreen-image-trigger" src="./assets/Adobe Express - file-Photoroom.png" />
-      </div>
-    </section>
+        <div class="ded">
+          <span class="ded--text">
+            Это так же и мой праздник!!</br> Нажми на мой нос несколько раз,
+            что б не потерять меня
+          </span>
+          <img class="fullscreen-image-trigger" src="./assets/Adobe Express - file-Photoroom.png" />
+        </div>
+      </section>
+      <section
+        class="section section--cream"
+        aria-labelledby="guest-form-title"
+      >
+        <p class="footer--text">
+          По всем вопросам, связанным с трансфером, торжеством и сюрпризами, <br/>
+          обращаться к нашему свадебному организатору
+          <br/>
+
+          Чернышёва Валерия <a href="tel:+375447627727">+375 44 762 77 27</a>
+        </p>
+      </section>
+
       <div class="fullscreen-image-overlay">
         <img class="fullscreen-image-overlay__image" alt="" />
       </div>
@@ -319,7 +342,7 @@
           fullscreenImageOverlay.classList.remove("is-hiding");
           fullscreenImageOverlayImage.src = "";
         }, 2000);
-      }, 3000);
+      }, 2000);
     });
   });
 </script>
