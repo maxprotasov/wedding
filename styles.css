@@ -173,6 +173,12 @@ h2 {
 
 .date-section {
   padding-top: 4px;
+  padding-bottom: 60px;
+}
+
+.map {
+  width: 87%;
+  max-width: 540px;
 }
 
 .date-card {
@@ -327,7 +333,7 @@ h2 {
 
 .timeline figcaption {
   min-height: 35px;
-  padding: 4px 12px 6px;
+  padding: 6px 12px;
   color: var(--cream);
   font-size: clamp(1.05rem, 4vw, 1.5rem);
   font-weight: 600;
@@ -385,7 +391,7 @@ h2 {
   font-size: clamp(1rem, 3.5vw, 1.45rem);
   font-weight: 500;
   line-height: 1.35;
-  margin-bottom: 30px;
+  padding: 10px;
 }
 
 .dress-gallery {
@@ -660,6 +666,10 @@ h2 {
     bottom: -66px;
   }
 
+  .map {
+    width: 100%;
+  }
+
   .couple_photo {
     min-height: 260px;
     height: initial;
@@ -675,7 +685,7 @@ h2 {
   }
 
   .timeline figure {
-    width: 78%;
+    width: 100%;
   }
 
   .date-card {
@@ -774,12 +784,18 @@ h2 {
 }
 
 .description {
-  padding: 20px 65px;
+  padding: 10px;
+  max-width: 540px;
+  margin: 0 auto;
   font-size: clamp(0.98rem, 3vw, 1.2rem);
 }
 
 .form_link {
   font-size: clamp(1.15rem, 4.1vw, 1.75rem);
+}
+
+.date-card article {
+  background-color: #fff;
 }
 
 .ded {
