@@ -791,6 +791,16 @@ h2 {
 }
 
 .form_link {
+  display: block;
+  padding: 20px;
+  margin: 0 auto;
+  border: 0;
+  border-radius: 15px;
+  background: var(--cream);
+  cursor: pointer;
+  color: var(--rose);
+  box-sizing: border-box;
+  box-shadow: 5px 5px #e6adb1;
   font-size: clamp(1.15rem, 4.1vw, 1.75rem);
 }
 
